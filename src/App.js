@@ -1,23 +1,18 @@
 import React from 'react';
+import Form from './Form';
+
 
 function App() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    
-    const username = e.target.elements.username.value;
-    const email = e.target.elements.email.value;
-
-    
-    console.log('Form submitted successfully');
+  const handleFormSubmit = (formData) => {
+    // Access formData.username and formData.email here
+    console.log('Form submitted successfully:', formData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" placeholder="Username" />
-      <input type="email" name="email" placeholder="Email" />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h1>My App</h1>
+      <Form onSubmit={handleFormSubmit} />
+    </div>
   );
 }
 
