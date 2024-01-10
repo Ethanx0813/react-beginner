@@ -1,18 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-import EventHandler from './EventHandler';
 
 function App() {
-  const items = ['Apple', 'Banana', 'Orange', 'Mango'];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
+    const username = e.target.elements.username.value;
+    const email = e.target.elements.email.value;
+
+    
+    console.log('Form submitted successfully');
+  };
 
   return (
-    <ul>
-  {items.map((item, index) => (
-    <li key={index}>{item}</li>
-  ))}
-</ul>
-   
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="username" placeholder="Username" />
+      <input type="email" name="email" placeholder="Email" />
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 
