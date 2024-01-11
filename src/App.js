@@ -1,10 +1,11 @@
+// App.js
 import React from 'react';
 import Form from './Form';
-
+import StyledComponent from './StyledComponent'; // Import the styled component
+import './styles.css';
 
 function App() {
   const handleFormSubmit = (formData) => {
-    // Access formData.username and formData.email here
     console.log('Form submitted successfully:', formData);
   };
 
@@ -12,6 +13,7 @@ function App() {
     <div>
       <h1>My App</h1>
       <Form onSubmit={handleFormSubmit} />
+      <StyledComponent>Styled with CSS-in-JS</StyledComponent>
     </div>
   );
 }
